@@ -25,7 +25,7 @@ def sd(input_list):
     return (s / (n - 1)) ** 0.5
 
 
-def fibo(input, optional):
+def fibo(input, starting=0):
     """
     Generate Fibonacci sequence
     Input: Lenght of numbers to output
@@ -34,3 +34,12 @@ def fibo(input, optional):
      - 1: 1 and 1
      - 2: 1 and 2 (Fibonacci's way)
     """
+    if starting not in [0, 1 ,2]:
+        print("Invalid starting option. Valid options are:")
+        print(" 0 for 0 and 1 (default)")
+        print(" 1 for 1 and 1")
+        print(" 2 for 1 and 2 (Fibonacci's way)")
+    print("So far so good... maybe")
+
+if __name__ == '__main__':
+    fibo(8)
