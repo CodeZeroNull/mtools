@@ -1,6 +1,4 @@
 
-import sys
-
 def am(input_list):
     """
     Calculate the Arithmetic Mean
