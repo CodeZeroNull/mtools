@@ -23,3 +23,56 @@ def sd(input_list):
     s = sum([(member - mean) ** 2 for member in input_list])
     n = len(input_list)
     return (s / (n - 1)) ** 0.5
+
+
+def fibo(length, starting=0):
+    """
+    Generate Fibonacci sequence
+    Input: Lenght of numbers to output
+    Optional Input: Starting point:
+     - 0: 0 and 1 (default)
+     - 1: 1 and 1
+     - 2: 1 and 2 (Fibonacci's way)
+    """
+    
+    if starting == 0:
+        num1 = 0
+        num2 = 1
+    elif starting == 1:
+        num1 = 1
+        num2 = 1
+    elif starting == 2:
+        num1 = 1
+        num2 = 2
+    else:
+        print("Invalid starting option. Valid options are:")
+        print(" 0 for 0 and 1 (default)")
+        print(" 1 for 1 and 1")
+        print(" 2 for 1 and 2 (Fibonacci's way)")
+    
+    if length < 1:
+        print("I need the series to have a non-zero length.")
+        return
+    elif length == 1:
+        print(num1)
+        return
+    elif length == 2:
+        print(num1, num2)
+        return
+
+    else:
+        next_number = num1 + num2
+        count = 0
+        print(num1, end=" ")
+        print(num2, end=" ")
+        while count <= length - 3:
+            print(next_number, end=" ")
+            count += 1
+            num1, num2 = num2, next_number
+            next_number = num1 + num2
+    print()
+    
+
+if __name__ == '__main__':
+    print("Example mtools.fibo(10, 0):")
+    fibo(10, 0)
