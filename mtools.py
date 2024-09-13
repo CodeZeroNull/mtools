@@ -1,9 +1,20 @@
 
+def numbercheck(input_list):
+    try:
+        sum(input_list)
+        return True
+    except:
+        return False
+
 def am(input_list):
     """
     Calculate the Arithmetic Mean
     Input: list (list/tupple/set/etc) of numbers
     """
+    if numbercheck(input_list) == False:
+        print("I need a list of numbers as input.")
+        print("Your input was:", input_list)
+        return
     return sum(input_list) / len(input_list)
 
 
@@ -12,6 +23,10 @@ def sd(input_list):
     Calculate the Standard Deviation
     Input: list (list/tupple/set/etc) of numbers
     """
+    if numbercheck(input_list) == False:
+        print("I need a list of numbers as input.")
+        print("Your input was:", input_list)
+        return
     try:
         if len(input_list) < 2:
             print("I need at least 2 numbers to calculate the standard deviation!")
@@ -24,6 +39,11 @@ def sd(input_list):
     n = len(input_list)
     return (s / (n - 1)) ** 0.5
 
+if __name__ == '__main__':
+    A = [1, "2", 7]
+    print("For A defined as", A)
+    print("The mean is", am(A))
+    print("The standard deviation is", sd(A))
 
 def fibo(length, starting=0):
     """
@@ -73,6 +93,3 @@ def fibo(length, starting=0):
     print()
     
 
-if __name__ == '__main__':
-    print("Example mtools.fibo(10, 0):")
-    fibo(10, 0)
