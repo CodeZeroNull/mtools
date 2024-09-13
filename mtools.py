@@ -55,11 +55,19 @@ def fibo(length, starting=0):
     if length < 1:
         print("I need the series for have a non-zero length.")
         return
+    elif length == 1:
+        print(num1)
+        return
+    elif length == 2:
+        print(num1, num2)
+        return
+
     else:
-        next_number = num2
+        next_number = num1 + num2
         count = 0
         print(num1, end=" ")
-        while count <= length - 2:
+        print(num2, end=" ")
+        while count <= length - 3:
             print(next_number, end=" ")
             count += 1
             num1, num2 = num2, next_number
@@ -68,4 +76,5 @@ def fibo(length, starting=0):
     
 
 if __name__ == '__main__':
-    fibo(10,2)
+    print("Example mtools.fibo(10, 0):")
+    fibo(10, 0)
