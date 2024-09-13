@@ -39,12 +39,6 @@ def sd(input_list):
     n = len(input_list)
     return (s / (n - 1)) ** 0.5
 
-if __name__ == '__main__':
-    A = [1, "2", 7]
-    print("For A defined as", A)
-    print("The mean is", am(A))
-    print("The standard deviation is", sd(A))
-
 def fibo(length, starting=0):
     """
     Generate Fibonacci sequence
@@ -93,3 +87,12 @@ def fibo(length, starting=0):
     print()
     
 
+#Examples and Testing
+if __name__ == '__main__':
+    A = [1, 2, 7]
+    print("For A defined as", A)
+    print("The mean is", am(A))
+    print("The standard deviation is", sd(A))
+    
+    print("Example mtools.fibo(10, 0):", fibo(10, 0))
+    
