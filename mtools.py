@@ -51,7 +51,7 @@ def fibo(length, starting=0):
         print(" 2 for 1 and 2 (Fibonacci's way)")
     
     if length < 1:
-        print("I need the series for have a non-zero length.")
+        print("I need the series to have a non-zero length.")
         return
     elif length == 1:
         print(num1)
