@@ -85,6 +85,7 @@ def fibo(length, starting=0):
             num1, num2 = num2, next_number
             next_number = num1 + num2
     print()
+    return
     
 
 #Examples and Testing
