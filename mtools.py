@@ -39,9 +39,10 @@ def sd(input_list):
     n = len(input_list)
     return (s / (n - 1)) ** 0.5
 
-def fibo(length, starting=0):
+def fiboP(length, starting=0):
     """
     Generate Fibonacci sequence
+    Output: prints the sequence to the screen
     Input: Lenght of numbers to output
     Optional Input: Starting point:
      - 0: 0 and 1 (default)
@@ -88,6 +89,54 @@ def fibo(length, starting=0):
     return
     
 
+def fiboS(length, starting=0):
+    """
+    Generate a Fibonacci sequence
+    Output: Fibonacci sequence as a list
+    Input: Lenght of numbers to output
+    Optional Input: Starting point:
+     - 0: 0 and 1 (default)
+     - 1: 1 and 1
+     - 2: 1 and 2 (Fibonacci's way)
+    """
+    if starting == 0:
+        num1 = 0
+        num2 = 1
+    elif starting == 1:
+        num1 = 1
+        num2 = 1
+    elif starting == 2:
+        num1 = 1
+        num2 = 2
+    else:
+        print("Invalid starting option. Valid options are:")
+        print(" 0 for 0 and 1 (default)")
+        print(" 1 for 1 and 1")
+        print(" 2 for 1 and 2 (Fibonacci's way)")
+    
+    if length < 1:
+        print("I need the series to have a non-zero length.")
+        return
+    elif length == 1:
+        fiboSequence = [num1]
+        return fiboSequence
+    elif length == 2:
+        fiboSequence = [num1, num2]
+        return fiboSequence
+
+    else:
+        next_number = num1 + num2
+        count = 0
+        fiboSequence = [num1, num2]
+        while count <= length - 3:
+            fiboSequence.append(next_number)
+            count += 1
+            num1, num2 = num2, next_number
+            next_number = num1 + num2
+    return fiboSequence
+
+
+
 #Examples and Testing
 if __name__ == '__main__':
     A = [1, 2, 7]
@@ -95,5 +144,10 @@ if __name__ == '__main__':
     print("The mean is", am(A))
     print("The standard deviation is", sd(A))
     
-    print("Example mtools.fibo(10, 0):", fibo(10, 0))
+    print("Example mtools.fiboP(10, 0):")
+    fiboP(10, 0)
+
+    print("Example mtools.fiboS(13, 1):")
+    B = fiboS(13, 1)
+    print(B)
     
